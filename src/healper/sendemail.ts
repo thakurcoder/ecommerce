@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 import { NextRequest,NextResponse } from "next/server";
-export const SendEmail = async (otp,email)=>{
+export const SendEmail = async (otp:number,email:string)=>{
     
     let config = {
         service: "gmail",
