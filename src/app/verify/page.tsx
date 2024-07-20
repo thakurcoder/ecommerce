@@ -76,7 +76,9 @@ const Verify: React.FC = () => {
                 required
                 onChange={(e) => handleChange(index, e.target.value)}
                 onKeyDown={(e) => handleKeyDown(index, e)}
-                ref={(el) => (inputRefs.current[index] = el)}
+                ref={(el) => {
+                  inputRefs.current[index] = el;
+                }}
                 className="w-10 h-10 text-center border border-gray-300 rounded"
               />
             ))}
