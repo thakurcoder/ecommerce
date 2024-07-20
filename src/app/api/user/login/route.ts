@@ -44,7 +44,7 @@ export async function POST(request:NextRequest){
             success:true,
             status:200
         })
-
+        
         response.cookies.set("token",token,{
             httpOnly:true
         })

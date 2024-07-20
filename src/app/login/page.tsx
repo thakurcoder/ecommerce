@@ -22,7 +22,7 @@ const onLogin = async ()=>{
   try {
     setButtonValue("LOADING...")
       const response = await axios.post("/api/user/login",data)
-      
+      // console.log(response)
       if(response.data.status === 200){
         router.push("/")    
       }
