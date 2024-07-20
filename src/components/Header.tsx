@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import Link from "next/link";
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 import { useStore } from '@/lib/store';
@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 const Header: React.FC = () => {
 
   const name = useStore((state:any)=> state.name)
+  const [isHomePage, setIsHomePage] = useState(false);
   const router = useRouter()
   const logout = async ()=>{
     try{
@@ -18,7 +19,13 @@ const Header: React.FC = () => {
       console.log(error)
     }
   }
-  const isHomePage = typeof window !== 'undefined' && window.location.pathname === "/";
+  useEffect(() => {
+    // Ensure the window object is available
+    if (typeof window !== 'undefined') {
+      setIsHomePage(window.location.pathname === "/");
+    }
+  }, []);
+  // const isHomePage = typeof window !== 'undefined' && window.location.pathname === "/";
   return (
     <header className="bg-white shadow-sm py-2">
         <div className=" mx-auto px-4 flex justify-end items-center space-x-4">
