@@ -18,7 +18,7 @@ const Header: React.FC = () => {
       console.log(error)
     }
   }
-
+  const isHomePage = typeof window !== 'undefined' && window.location.pathname === "/";
   return (
     <header className="bg-white shadow-sm py-2">
         <div className=" mx-auto px-4 flex justify-end items-center space-x-4">
@@ -38,7 +38,7 @@ const Header: React.FC = () => {
         <div className="flex items-center space-x-7 ">
           <FaSearch className="text-gray-700 hover:text-black cursor-pointer" />
           <FaShoppingCart className="text-gray-700 hover:text-black cursor-pointer" />
-          {location.pathname=="/" && <button onClick={logout} className='m-2 p-2  text-xl bg-slate-200 shadow-2xl rounded-md' >LOGOUT</button>}
+          {isHomePage && <button onClick={logout} className='m-2 p-2  text-xl bg-slate-200 shadow-2xl rounded-md' >LOGOUT</button>}
         </div>
       </div>
         <div className='m-1 flex justify-center shadow bg-gray-100'>

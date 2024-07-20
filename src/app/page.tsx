@@ -25,7 +25,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchdata();
-  }, []);
+  },[]);
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
