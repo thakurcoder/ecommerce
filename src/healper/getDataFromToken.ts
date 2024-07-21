@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 
-export function getDtataFromToken(requiest:NextRequest){
+export function  getDtataFromToken(requiest:NextRequest){
     try {
         // console.log("in get help")
         const token = requiest.cookies.get('token')?.value || ""
