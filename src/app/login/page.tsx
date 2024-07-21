@@ -87,7 +87,7 @@ const onLogin = async ()=>{
           <p className='text-red-600'>{error}</p>
         </form>
         <p className="text-center text-sm text-gray-500 mt-8">
-        Dont have an Account? && {" "}
+        Dont have an Account? {" "}
           <Link href="/signup" className=" text-black">
           Sign up
           </Link>
